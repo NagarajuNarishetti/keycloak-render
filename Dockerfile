@@ -1,6 +1,8 @@
 FROM quay.io/keycloak/keycloak:25.0.6
 
-# Set Keycloak start command
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
+# Expose port for Render to detect
+EXPOSE 8080
 
+# Start Keycloak in dev mode
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
 CMD ["start-dev"]
